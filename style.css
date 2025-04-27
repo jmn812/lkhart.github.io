@@ -1,7 +1,7 @@
 /* 기본 스타일링 */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fff;
+  font-family: 'Georgia', serif; /* 고풍스러운 글꼴 */
+  background-color: #f4f4f4; /* 밝은 배경 */
   color: #333;
   margin: 0;
   padding: 0;
@@ -9,47 +9,49 @@ body {
 
 header {
   text-align: center;
-  padding: 20px;
-  background-color: #f0f0f0;
+  padding: 40px;
+  background-color: #f0e5d8; /* 부드러운 크림색 배경 */
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0;
+  color: #3e3e3e; /* 깊은 회색 */
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  padding: 20px;
-  grid-auto-rows: minmax(200px, auto);
+  grid-template-columns: repeat(3, 1fr); /* 3열 그리드 */
+  gap: 30px; /* 그림 간격 넓히기 */
+  padding: 40px;
+  grid-auto-rows: minmax(250px, auto); /* 높이 조정 */
 }
 
 .gallery-item {
   position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* 그림 주위에 그림자 추가 */
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
-  border: 10px solid #eee;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  border: 15px solid #d1c1a1; /* 고풍스러운 액자 느낌의 테두리 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* 호버시 그림 확대 효과 */
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 태블릿 크기에서는 2열로 */
+  }
 }
 
 @media (max-width: 768px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 모바일에서는 1열로 */
   }
 }
